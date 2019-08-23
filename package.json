@@ -7,7 +7,7 @@
   "module": "dist/index.m.js",
   "unpkg": "dist/index.umd.js",
   "scripts": {
-    "build": "microbundle --external react,events && cp node_modules/@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css dist/",
+    "build": "microbundle --external react,events && cp node_modules/Viatick-co/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css dist/",
     "format": "prettier --write 'src/**/*.js'",
     "prepublish": "npm run build"
   },
