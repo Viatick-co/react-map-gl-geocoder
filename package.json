@@ -7,7 +7,7 @@
   "module": "dist/index.m.js",
   "unpkg": "dist/index.umd.js",
   "scripts": {
-    "build": "microbundle --external react,events && cp node_modules/Viatick-co/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css dist/",
+    "build": "babel src --out-dir dist && cp node_modules/@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css dist/",
     "format": "prettier --write 'src/**/*.js'",
     "prepublish": "npm run build"
   },
@@ -42,7 +42,13 @@
   },
   "homepage": "https://github.com/SamSamskies/react-map-gl-geocoder",
   "dependencies": {
-    "@mapbox/mapbox-gl-geocoder": "Viatick-co/mapbox-gl-geocoder#master",
+    "@mapbox/mapbox-gl-geocoder": "Viatick-co/mapbox-gl-geocoder",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "microbundle": "0.12.0-next.6",
     "prop-types": "^15.7.2",
     "viewport-mercator-project": "6.1.1"
   },
@@ -50,12 +56,11 @@
     "react-map-gl": ">= 4.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.0.2",
     "eslint": "^5.11.0",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.2.1",
     "lint-staged": "^8.1.0",
-    "microbundle": "^0.12.0-next.3",
     "prettier": "1.15.3"
   }
 }
